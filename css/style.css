@@ -1,0 +1,83 @@
+/*desktop*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 700;
+  
+  
+}
+body{
+  background-color: rgb(176, 194, 219);
+}
+.pc{
+  
+  height: auto;
+  min-height: 450px; 
+  width: 100vw;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(176, 194, 219);
+  padding:15px ; 
+  
+}
+h1{
+  margin-bottom: 15%;
+}
+.container{
+  background-color: wheat;
+  word-wrap: break-word;
+  border-radius: 5%;
+  padding: 5%;
+}
+
+#adicionar{
+  cursor: pointer;
+  background-color: rgb(72, 134, 221);
+  border: none;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  margin: 3px;
+}
+#adicionar:hover{
+                  background-color: rgb(72, 34, 255); 
+}
+
+#inputTarefas{
+  padding: 4px;
+  border-radius: 5px;
+  margin-bottom: 5%;
+}
+.js{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  
+}
+.js button , #remover{
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 15%;
+  padding: 2px;
+  margin: 4px;
+  background-color: rgb(251, 8, 8);
+  font-size: 1.08rem;
+}
+.js button:hover {
+  padding: 5px;
+  background-color: rgb(109, 11, 11);
+}
+ #remover:hover{
+  background-color: rgb(109, 11, 11);
+}
+li{
+  padding: 2px;
+  margin: 4px;  
+  list-style:none;
+  
+}
