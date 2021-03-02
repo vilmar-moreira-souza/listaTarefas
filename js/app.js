@@ -7,23 +7,18 @@ const remover = document.getElementById("remover")
 /*
 */
 //adiciona itens da lista
-let i = 0
-let a
-let user = []
-adicionar.addEventListener("click", () => {    
+adicionar.addEventListener("click", () => {
+    let i = 0
+    let a
+    let user = []
     let restauradb =JSON.parse(localStorage.getItem("usuario"))
     if (restauradb != null ) {
-        
-   
     i = restauradb.length
     user = restauradb}else{
         i= 0
         user =[]
     }
-    
-    
     if (inputTarefas.value != "") {
-        alert("entrei")
         user[i] = inputTarefas.value
         inputTarefas.value = ""        
         localStorage.setItem("usuario", JSON.stringify(user))
@@ -37,14 +32,13 @@ adicionar.addEventListener("click", () => {
 })
 
 //remover itens da lista
-mostraTarefas.addEventListener("click", (e) => {   
-    //console.log(jsDiv)
+mostraTarefas.addEventListener("click", (e) => {
     console.log(e.composedPath()[1].children[0].innerText)
     let txt =e.composedPath()[1].children[0].innerText // pega o texto do elemeto
     const clickElement = e.target
     if (clickElement.tagName === "BUTTON") {
         //clickElement.remove()      
-        console.log(txt)    
+        //console.log(txt)
         e.composedPath()[1].remove()          
         let restauradb =JSON.parse(localStorage.getItem("usuario"))          
         restauradb.splice(restauradb.indexOf(txt),1)           // remove o texto do array pela posição dele       
@@ -54,14 +48,18 @@ mostraTarefas.addEventListener("click", (e) => {
 })
 //remover tudo
 remover.addEventListener("click",()=>{
-    mostraTarefas.innerHTML= ""
-    // perugntar usuario
-    //zerar localstorage
+    const zerar = []
+    if (confirm('Deseja realmente deletar todas tarefas?')) {
+        mostraTarefas.innerHTML= ""
+        localStorage.setItem("usuario",JSON.stringify(zerar))
+    } else {
+        //alert('O registro não foi deletado');
+    }
 })
 
 //manter itens quando recarregar a pagina
 let restauradb =JSON.parse(localStorage.getItem("usuario"))
 if (restauradb != null ) {
-restauradb.map((valor)=>{
-mostraTarefas.innerHTML += `<div class="js"><li>${valor}</li><button id="botao">limpar</button></div>` })
+    restauradb.map((valor)=>{
+    mostraTarefas.innerHTML += `<div class="js"><li>${valor}</li><button id="botao">limpar</button></div>` })
 }
