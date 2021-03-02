@@ -17,7 +17,7 @@
 
 
 <h3>ideias para implementar</h3>
-git statu
+
  <li>melhorar o design</li>
 <li> adicionar detalhes da tarefa</li>
 <li> possibilidade de editar a tarefa</li>
