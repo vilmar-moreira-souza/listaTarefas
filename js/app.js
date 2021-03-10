@@ -4,6 +4,8 @@ const inputTarefas = document.getElementById("inputTarefas")
 const mostraTarefas = document.getElementById("mostraTarefas")
 const adicionar = document.getElementById("adicionar")
 const remover = document.getElementById("remover")
+const print = document.getElementById("print")
+const noVisible =document.querySelector(".pc")
 /*
 */
 //adiciona itens da lista
@@ -63,3 +65,14 @@ if (restauradb != null ) {
     restauradb.map((valor)=>{
     mostraTarefas.innerHTML += `<div class="js"><li>${valor}</li><button id="botao">limpar</button></div>` })
 }
+//
+//print das tarefas
+print.addEventListener("click",()=>{
+	//const impresao = mostraTarefas.html
+	//const win = window.open()
+	//win.document.write(impresao)
+	window.print()
+	//win.close()
+})
+
+

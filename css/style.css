@@ -54,7 +54,7 @@ h1{
   font-size: 1.5rem;
   
 }
-.js button , #remover{
+.js button , #remover, #print{
   cursor: pointer;
   color: white;
   border: none;
@@ -71,8 +71,31 @@ h1{
  #remover:hover{
   background-color: rgb(109, 11, 11);
 }
+#print{
+	float:right;
+	 background-color: rgb(72, 134, 221);
+}
+#print:hover{
+	background-color: rgb(72, 34, 255); 
+}
 li{
   padding: 2px;
   margin: 4px;  
   list-style:none;
+}
+.noVisible{
+	display:none;
+}
+/*CSS para impressão*/
+@media print {
+	.js button , #remover, #print{
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 15%;
+  padding: 2px;
+  margin: 4px;
+  background-color: rgb(251, 8, 8);
+  font-size: 1.08rem;
+}
 }
